@@ -1,0 +1,85 @@
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="form">
+      <!-- Success Message -->
+      <div class="success-message" [ngClass]="{'show': showSuccessMessage}">
+        ✅ Your message has been sent successfully!
+      </div>
+
+      <!-- Error Message -->
+      <div class="error-message-alert" [ngClass]="{'show': showErrorMessage}">
+        ❌ {{ errorMessage }}
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <input 
+          type="text" 
+          formControlName="name"
+          placeholder="Your Name" 
+          class="form-control"
+          [ngClass]="{'error': hasError('name')}">
+
+        <input 
+          type="email" 
+          formControlName="email"
+          placeholder="Your Email" 
+          class="form-control"
+          [ngClass]="{'error': hasError('email')}">
+
+        <input 
+          type="text" 
+          formControlName="website"
+          placeholder="You website (if exist)" 
+          class="form-control">
+
+        <textarea 
+          formControlName="message"
+          placeholder="How can I help?" 
+          class="form-control"
+          [ngClass]="{'error': hasError('message')}"></textarea>
+
+        <div class="action">
+          <button 
+            type="submit" 
+            class="btn"
+            [ngClass]="{'loading': isSubmitting}"
+            [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Sending...' : 'Get in Touch' }}
+          </button>
+          
+          <div class="social-media">
+            <a class="square black" href="https://www.facebook.com/profile.php?id=61550972199484">
+              <img src="/images/facebook.png" width="25" height="25" alt="Facebook Icon">
+            </a>
+            <a class="square" href="https://www.linkedin.com/in/nesrine-ghribi-3905502a3/">
+              <img src="/images/linkedin.png" width="25" height="25" alt="LinkedIn Icon">
+            </a>
+            <a class="square" href="https://x.com/NesrineGHR36210">
+              <img src="/images/x.png" width="25" height="25" alt="X Icon">
+            </a>
+            <a class="square" href="https://www.reddit.com/user/Diligent-Bit6424/">
+              <img src="/images/reddit.png" width="25" height="25" alt="Reddit Icon">
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class="contact-detail">
+      <div class="description">
+        <div class="title">
+          <p><span class="text-second-style">Let's </span><span class="text-third-style">talk </span><span class="text-second-style margin-left">for </span></p>
+          <p><span class="text-second-style">Something special</span></p>
+        </div>
+        <p class="text-description">
+          I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable
+          interactive experiences.
+        </p>
+        <div class="coordonnees">
+          <p class="email">nesrineghribi43&#64;gmail.com</p>
+          <p class="phone">+216 92 111 42</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

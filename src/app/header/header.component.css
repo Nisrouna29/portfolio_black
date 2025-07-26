@@ -1,0 +1,234 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: white;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.yellow-logo {
+    color: #f7c600;
+    font-size: 30px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 510;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #f7c600;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.download-cv {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+    font-size: 16px;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: black;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 115px;
+}
+
+.white {
+    color: white;
+}
+
+.download-cv:hover,
+.download-cv:active {
+    background: #333;
+}
+
+.icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.icon:hover {
+    background-color: rgba(247, 198, 0, 0.1);
+}
+
+@media screen and (min-width: 1800px) {
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 810px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        background-color: white;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-nav.responsive {
+        max-height: 400px;
+        padding: 20px 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav.responsive .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Staggered animation for menu items */
+    .navbar-nav.responsive .nav-item:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .navbar-nav.responsive .nav-item:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .navbar-nav.responsive .nav-item:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .navbar-nav.responsive .nav-item:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 15px 20px;
+        margin: 0 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        margin: 0;
+    }
+
+    .nav-link:hover,
+    .nav-link:active {
+        text-decoration: none;
+        background-color: rgba(247, 198, 0, 0.1);
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+}
+
+/* Smaller mobile devices */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .yellow-logo {
+        font-size: 24px;
+    }
+
+    .download-cv {
+        font-size: 14px;
+        padding: 8px 12px;
+        width: 100px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+}

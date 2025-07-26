@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <div class="container">
+        <a class="logo" href="#">
+            <i class="fa-regular fa-heart yellow-logo"></i>
+            <span>Portfolio</span>
+        </a>
+        <ul class="navbar-nav" [ngClass]="{ 'responsive': isResponsive }">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Me</a>
+            </li>
+        </ul>
+        <div class="nav-actions">
+            <button class="download-cv" (click)="downloadCv()">
+                <span>Resume</span>
+                <i class="fa-solid fa-download white"></i>
+            </button>
+            <a class="icon" (click)="toggleResponsive()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+</nav>

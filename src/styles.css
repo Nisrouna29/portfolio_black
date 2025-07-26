@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+/* Global Reset - Be very confident with this */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Crucial for consistent sizing */
+}
+
+/* HTML & Body - Foundation for full height */
+html,
+body {
+  height: 100%;
+  /* Ensures body takes full height of html */
+  width: 100%;
+  background-color: black;
+}
+
+body {
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+/* app-root - The Sticky Footer Container */
+app-root {
+  display: flex;
+  flex-direction: column;
+  /* Stacks children vertically */
+  min-height: 100vh;
+  /* Ensures app-root is at least the viewport height */
+  width: 100vw;
+  /* Ensures app-root is full viewport width */
+  /* These are already good, but let's confirm no margin/padding interference */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Content Area - The "Grower" */
+/* This is the most important part for a sticky footer.
+   You need ONE element within app-root (excluding header/footer) to take up all available space.
+   In your case, it should be the container holding `app-about-me` to `app-contact`.
+*/
+.main-content-wrapper {
+  /* <--- You need to add this wrapper in your app.component.html */
+  flex-grow: 1;
+  /* This element will expand to fill all remaining vertical space */
+  display: flex;
+  /* Make it a flex container to arrange its own children */
+  flex-direction: column;
+  /* Stack its children vertically */
+  /* Optional: if you want content within this wrapper to scroll independently */
+  /* overflow-y: auto; */
+}
+
+/* Default Element Resets - Important for inner components */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure no default margin on list items */
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* If you don't want bullets/numbers by default */
+}
