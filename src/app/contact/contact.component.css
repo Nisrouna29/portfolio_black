@@ -274,3 +274,9 @@ form textarea.error {
     padding-right: 20px;
   }
 }
+/* Mobile Responsive Styles */
+@media screen and (max-width: 350px) {
+  .btn {
+    font-size: 9px;
+  }
+}
