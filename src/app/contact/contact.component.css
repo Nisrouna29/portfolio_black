@@ -127,10 +127,6 @@ form textarea.error {
   cursor: pointer;
 }
 
-.square:hover {
-  transform: translateY(-2px);
-}
-
 .black {
   background-color: black;
 }
